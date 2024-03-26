@@ -16,6 +16,16 @@
       "headingKeywords": {}
     },
     {
+      "src": "Cedric.md",
+      "headings": {
+        "enhancement-added-entry-class": "Enhancement Added: Entry Class",
+        "description": "Description",
+        "how-is-it-implemented": "How is it implemented",
+        "why-it-is-implemented-this-way": "Why it is implemented this way"
+      },
+      "headingKeywords": {}
+    },
+    {
       "src": "Configuration.md",
       "title": "Configuration guide",
       "headings": {
@@ -50,8 +60,8 @@
         "storage-component": "Storage component",
         "common-classes": "Common classes",
         "implementation": "Implementation",
+        "add-functon": "Add functon",
         "edit-function": "Edit function",
-        "proposed-data-archiving": "[Proposed] Data archiving",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -139,6 +149,43 @@
       "title": "John Doe's Project Portfolio Page",
       "headings": {
         "project-addressbook-level-3": "Project: AddressBook Level 3"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/members/Cedricaca.md",
+      "headings": {},
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/members/Chengzhen.md",
+      "headings": {
+        "project-rainbow-dragon-postmortem": "Project: Rainbow Dragon Postmortem",
+        "reducing-or-even-doing-automated-test": "Reducing or even doing automated test:"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/members/Xiaoyang.md",
+      "headings": {
+        "project-rainbow-dragon-postmortem": "Project: Rainbow Dragon Postmortem",
+        "switch-of-workflow": "Switch of Workflow:"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/members/Xuyan.md",
+      "headings": {
+        "project-rainbow-dragon-postmortem": "Project: Rainbow Dragon Postmortem",
+        "things-that-did-not-go-very-well-in-v1-2-of-our-product": "Things that did not go very well in v1.2 of our product:"
+      },
+      "headingKeywords": {}
+    },
+    {
+      "src": "team/members/hongRay.md",
+      "headings": {
+        "project-rainbow-dragon-postmortem": "Project: Rainbow Dragon Postmortem",
+        "what-can-be-improved-in-out-work-process": "what can be improved in out work process."
       },
       "headingKeywords": {}
     },
