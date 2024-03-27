@@ -16,16 +16,6 @@
       "headingKeywords": {}
     },
     {
-      "src": "Cedric.md",
-      "headings": {
-        "enhancement-added-entry-class": "Enhancement Added: Entry Class",
-        "description": "Description",
-        "how-is-it-implemented": "How is it implemented",
-        "why-it-is-implemented-this-way": "Why it is implemented this way"
-      },
-      "headingKeywords": {}
-    },
-    {
       "src": "Configuration.md",
       "title": "Configuration guide",
       "headings": {
@@ -49,7 +39,7 @@
     {
       "src": "DeveloperGuide.md",
       "headings": {
-        "ab-3-developer-guide": "AB-3 Developer Guide",
+        "rainbow-dragon-developer-guide": "Rainbow Dragon Developer Guide",
         "acknowledgements": "Acknowledgements",
         "setting-up-getting-started": "Setting up, getting started",
         "design": "Design",
@@ -61,7 +51,10 @@
         "common-classes": "Common classes",
         "implementation": "Implementation",
         "add-functon": "Add functon",
+        "addcategory-function": "AddCategory function",
         "edit-function": "Edit function",
+        "find-function": "Find function",
+        "proposed-undo-redo-feature": "[Proposed] Undo/redo feature",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
         "product-scope": "Product scope",
@@ -154,7 +147,10 @@
     },
     {
       "src": "team/members/Cedricaca.md",
-      "headings": {},
+      "headings": {
+        "project-rainbow-dragon-postmortem": "Project: Rainbow Dragon Postmortem",
+        "what-went-well": "What went well"
+      },
       "headingKeywords": {}
     },
     {
