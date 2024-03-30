@@ -26,7 +26,7 @@ public class PersonCard extends UiPart<Region> {
      *
      * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
      */
-
+    private static final Font loadedFont;
     public final Person person;
 
     @FXML
@@ -39,6 +39,14 @@ public class PersonCard extends UiPart<Region> {
     private Label result;
     @FXML
     private FlowPane tags;
+
+    static {
+        loadedFont = Font.loadFont(PersonCard.class.getResourceAsStream(
+                        "C:/Ray Stuff/NUS/Y2S2/CS2103T/tp/src/main/resources/font/fonts/Minecraft.ttf"), 120);
+        if (loadedFont == null) {
+            System.out.println("Font not loaded. Check the path and file name.");
+        }
+    }
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -55,11 +63,11 @@ public class PersonCard extends UiPart<Region> {
             }
         }
         id.setText(displayedIndex + ". ");
-        id.setFont(Font.loadFont("./PressStart2P-Regular.ttf", 120));
+        id.setFont(Font.loadFont("file:resources/font/fonts/PressStart2P-Regular.ttf", 120));
         name.setText(person.getEntry("Name").toString());
-        name.setFont(Font.loadFont("./PressStart2P-Regular.ttf", 120));
+        name.setFont(Font.loadFont("file:resources/font/fonts/PressStart2P-Regular.ttf", 120));
         result.setText(text);
-        result.setFont(Font.loadFont("./PressStart2P-Regular.ttf", 120));
+        result.setFont(Font.loadFont("file:resources/font/fonts/PressStart2P-Regular.ttf", 120));
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
