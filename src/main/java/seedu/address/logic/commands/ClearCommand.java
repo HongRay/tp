@@ -33,6 +33,7 @@ public class ClearCommand extends Command {
     public CommandResult execute(Model model) {
         requireNonNull(model);
         model.saveAddressBookState();
+        model.saveGroupAddressBookState();
         confirmationAlert = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationAlert.setTitle("Clear Command");
         confirmationAlert.setHeaderText(null);

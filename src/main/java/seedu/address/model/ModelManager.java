@@ -110,6 +110,7 @@ public class ModelManager implements Model {
     @Override
     public void setAddressBook(ReadOnlyAddressBook addressBook) {
         this.addressBook.resetData(addressBook);
+        this.groupAddressBook.resetData(addressBook);
     }
 
     @Override
@@ -147,8 +148,8 @@ public class ModelManager implements Model {
     }
     @Override
     public void undo() {
-        System.out.println("Non-group command history: " + commandHistory.size());
-        System.out.print("Group command history: " + groupCommmandHistory.size() + System.lineSeparator());
+        System.out.println("Non-group command history before: " + commandHistory.size());
+        System.out.print("Group command history before : " + groupCommmandHistory.size() + System.lineSeparator());
         if (lastActionWasGroup && !groupCommmandHistory.isEmpty() && groupCommmandHistory.size() != 1) {
             undoGrouping();
             lastActionWasGroup = true; // Reset flag after undoing
@@ -158,6 +159,8 @@ public class ModelManager implements Model {
         } else if (!commandHistory.isEmpty()) {
             setAddressBook(commandHistory.pop());
         }
+        System.out.println("Non-group command history after: " + commandHistory.size());
+        System.out.print("Group command history after: " + groupCommmandHistory.size() + System.lineSeparator());
     }
     private void undoGrouping() {
         setGroupAddressBook(groupCommmandHistory.pop());
