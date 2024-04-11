@@ -230,6 +230,6 @@ with(this){return _c('h3',{attrs:{"id":"glossary"}},[_v("Glossary"),_c('a',{stat
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Category")]),_v(": The type of field to assign to a Person. For example, \"Name\", \"Age\", \"Class\",")]),_v(" "),_c('li',[_c('strong',[_v("Description")]),_v(": The content of the field assigned to a Person. For example, for a category \"Name\", description can be \"John\".")]),_v(" "),_c('li',[_c('strong',[_v("Tag")]),_v(": A grouping or description for a Person that does not have a category, such as \"Family\", \"Friend\", or \"Enemy\"")]),_v(" "),_c('li',[_c('strong',[_v("Batch Processing")]),_v(" : Allows for multiple inputs at a time. For example, addCategory 1 c/clan d/Warriors c/Type d/Allies …")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Thu, 11 Apr 2024, 1:08:06 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Thu, 11 Apr 2024, 11:36:55 GMT+8]")])])])}
 }];
   
