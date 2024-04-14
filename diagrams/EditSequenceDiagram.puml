@@ -28,7 +28,7 @@ activate EditCommandParser
 EditCommandParser --> AddressBookParser
 deactivate EditCommandParser
 
-AddressBookParser -> EditCommandParser : parse("1")
+AddressBookParser -> EditCommandParser : parse("1 c/Clan d/rainbow")
 activate EditCommandParser
 
 create EditCommand

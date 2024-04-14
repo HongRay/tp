@@ -31,6 +31,8 @@
 !define STORAGE_COLOR_T3 #806600
 !define STORAGE_COLOR_T2 #544400
 
+!define ADDRESSBOOK_COLOR #B942F5
+
 !define USER_COLOR #000000
 
 skinparam Package {

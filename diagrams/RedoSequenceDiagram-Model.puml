@@ -1,0 +1,23 @@
+@startuml
+!include style.puml
+skinparam ArrowFontStyle plain
+
+box Model MODEL_COLOR_T1
+participant ":Model" as Model MODEL_COLOR
+participant ":UndoHistory" as UndoHistory MODEL_COLOR
+end box
+
+[-> Model : redo()
+activate Model
+
+Model -> UndoHistory : setAddressBook(ReadOnlyAddressBook)
+activate UndoHistory
+
+UndoHistory -> UndoHistory :resetData(ReadOnlyAddressBook)
+UndoHistory --> Model :
+deactivate UndoHistory
+
+[<-- Model
+deactivate Model
+
+@enduml
