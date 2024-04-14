@@ -6,7 +6,7 @@ box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":AddCategoryCommandParser" as AddCategoryCommandParser LOGIC_COLOR
-participant "d:AddCategoryCommand" as AddCategoryCommand LOGIC_COLOR
+participant "a:AddCategoryCommand" as AddCategoryCommand LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -49,7 +49,7 @@ deactivate AddressBookParser
 LogicManager -> AddCategoryCommand : execute(m)
 activate AddCategoryCommand
 
-AddCategoryCommand -> Model : SetPerson(PersontoEdit)
+AddCategoryCommand -> Model : setPerson(target, editedPerson)
 activate Model
 
 Model --> AddCategoryCommand

@@ -6,7 +6,7 @@ box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":AddCommandParser" as AddCommandParser LOGIC_COLOR
-participant "d:AddCommand" as AddCommand LOGIC_COLOR
+participant "a:AddCommand" as AddCommand LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -27,7 +27,7 @@ activate AddCommandParser
 AddCommandParser --> AddressBookParser
 deactivate AddCommandParser
 
-AddressBookParser -> AddCommandParser : parse("add n/name t/tags")
+AddressBookParser -> AddCommandParser : parse(" n/name t/tags")
 activate AddCommandParser
 
 create AddCommand
@@ -49,7 +49,7 @@ deactivate AddressBookParser
 LogicManager -> AddCommand : execute(m)
 activate AddCommand
 
-AddCommand -> Model : AddPerson(name, tags)
+AddCommand -> Model : addPerson(name, tags)
 activate Model
 
 Model --> AddCommand
