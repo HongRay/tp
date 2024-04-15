@@ -10,10 +10,9 @@ end box
 [-> Model : undo()
 activate Model
 
-Model -> CommandHistory : setAddressBook(ReadOnlyAddressBook)
+Model -> CommandHistory : setAddressBook(commandHistory)
 activate CommandHistory
 
-CommandHistory -> CommandHistory :resetData(ReadOnlyAddressBook)
 CommandHistory --> Model :
 deactivate CommandHistory
 
