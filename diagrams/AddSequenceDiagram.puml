@@ -39,6 +39,11 @@ activate entryList
 entryList --> AddCommandParser
 deactivate
 
+AddCommandParser -> Entry
+activate Entry
+Entry --> AddCommandParser :e
+deactivate
+
 create Person
 AddCommandParser -> Person
 activate Person
@@ -66,7 +71,7 @@ activate AddCommand
 
 AddCommand -> entryList
 activate entryList
-create Entry
+
 entryList -> Entry
 activate Entry
 Entry --> entryList

@@ -30,7 +30,7 @@ activate AddCategoryCommandParser
 AddCategoryCommandParser --> AddressBookParser
 deactivate AddCategoryCommandParser
 
-AddressBookParser -> AddCategoryCommandParser : parse("addCategory 1 c/class d/warrior")
+AddressBookParser -> AddCategoryCommandParser : parse(" 1 c/class d/warrior")
 activate AddCategoryCommandParser
 
 create entryList

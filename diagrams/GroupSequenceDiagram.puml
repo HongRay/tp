@@ -29,7 +29,7 @@ activate GroupCommandParser
 GroupCommandParser --> AddressBookParser
 deactivate GroupCommandParser
 
-AddressBookParser -> GroupCommandParser : parse("c/clan")
+AddressBookParser -> GroupCommandParser : parse(" c/clan")
 activate GroupCommandParser
 
 create GroupCommand
