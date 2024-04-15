@@ -4,7 +4,7 @@ skinparam ArrowFontStyle plain
 
 box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
-participant ":RainbowDragonParser" as RainbowDragonParser LOGIC_COLOR
+participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":DeleteCategoryCommandParser" as DeleteCategoryCommandParser LOGIC_COLOR
 participant "d:DeleteCategoryCommand" as DeleteCategoryCommand LOGIC_COLOR
 participant "r:CommandResult" as CommandResult LOGIC_COLOR
@@ -12,22 +12,24 @@ end box
 
 box Model MODEL_COLOR_T1
 participant "m:Model" as Model MODEL_COLOR
+participant "personToEdit:Person" as Person MODEL_COLOR
+participant "e:Entry" as Entry MODEL_COLOR
 end box
 
 [-> LogicManager : execute("deleteCategory 1 c/Clan")
 activate LogicManager
 
-LogicManager -> RainbowDragonParser : parseCommand("deleteCategory 1 c/Clan")
-activate RainbowDragonParser
+LogicManager -> AddressBookParser : parseCommand("deleteCategory 1 c/Clan")
+activate AddressBookParser
 
 create DeleteCategoryCommandParser
-RainbowDragonParser -> DeleteCategoryCommandParser
+AddressBookParser -> DeleteCategoryCommandParser
 activate DeleteCategoryCommandParser
 
-DeleteCategoryCommandParser --> RainbowDragonParser
+DeleteCategoryCommandParser --> AddressBookParser
 deactivate DeleteCategoryCommandParser
 
-RainbowDragonParser -> DeleteCategoryCommandParser : parse("1 c/Clan")
+AddressBookParser -> DeleteCategoryCommandParser : parse("1 c/Clan")
 activate DeleteCategoryCommandParser
 
 create DeleteCategoryCommand
@@ -37,19 +39,38 @@ activate DeleteCategoryCommand
 DeleteCategoryCommand --> DeleteCategoryCommandParser :
 deactivate DeleteCategoryCommand
 
-DeleteCategoryCommandParser --> RainbowDragonParser : d
+DeleteCategoryCommandParser --> AddressBookParser : d
 deactivate DeleteCategoryCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.
-DeleteCategoryCommandParser -[hidden]-> RainbowDragonParser
+DeleteCategoryCommandParser -[hidden]-> AddressBookParser
 destroy DeleteCategoryCommandParser
 
-RainbowDragonParser --> LogicManager : d
-deactivate RainbowDragonParser
+AddressBookParser --> LogicManager : d
+deactivate AddressBookParser
 
 LogicManager -> DeleteCategoryCommand : execute(m)
 activate DeleteCategoryCommand
 
-DeleteCategoryCommand -> Model : deleteEntry(Clan)
+
+DeleteCategoryCommand -> Person
+activate Person
+
+Person -> Entry : getEntry("Clan")
+activate Entry
+
+Entry --> Person : e
+deactivate Entry
+
+Person -> Entry : deleteEntry(e)
+activate Entry
+
+Entry --> Person
+deactivate Entry
+
+Person --> DeleteCategoryCommand
+deactivate Person
+
+DeleteCategoryCommand -> Model
 activate Model
 
 Model --> DeleteCategoryCommand

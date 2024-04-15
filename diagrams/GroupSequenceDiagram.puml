@@ -52,15 +52,13 @@ deactivate AddressBookParser
 LogicManager -> GroupCommand : execute(m)
 activate GroupCommand
 
-GroupCommand -> Model
+GroupCommand -> Model : groupPerson(clan)
 activate Model
-create AddressBook
 Model -> AddressBook
 activate AddressBook
 AddressBook --> Model
 deactivate
 
-create Group
 Model -> Group
 activate Group
 Group -> Group :group()
@@ -71,7 +69,7 @@ Group --> Model
 deactivate
 Model -> AddressBook : setPersons(d)
 activate AddressBook
-AddressBook -> Model
+AddressBook --> Model
 deactivate
 Model --> GroupCommand
 deactivate

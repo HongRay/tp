@@ -12,12 +12,15 @@ end box
 
 box Model MODEL_COLOR_T1
 participant "m:Model" as Model MODEL_COLOR
+participant "p:Person" as Person MODEL_COLOR
+participant "el: EntryList" as entryList MODEL_COLOR
+participant "e: Entry" as Entry MODEL_COLOR
 end box
 
-[-> LogicManager : execute("add n/name t/tags")
+[-> LogicManager : execute("add n/name c/clan d/rainbow")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("add n/name t/tags")
+LogicManager -> AddressBookParser : parseCommand("add n/name c/clan d/rainbow")
 activate AddressBookParser
 
 create AddCommandParser
@@ -27,8 +30,20 @@ activate AddCommandParser
 AddCommandParser --> AddressBookParser
 deactivate AddCommandParser
 
-AddressBookParser -> AddCommandParser : parse(" n/name t/tags")
+AddressBookParser -> AddCommandParser : parse(" n/name c/clan d/rainbow")
 activate AddCommandParser
+
+create entryList
+AddCommandParser -> entryList
+activate entryList
+entryList --> AddCommandParser
+deactivate
+
+create Person
+AddCommandParser -> Person
+activate Person
+Person --> AddCommandParser
+deactivate
 
 create AddCommand
 AddCommandParser -> AddCommand
@@ -49,7 +64,22 @@ deactivate AddressBookParser
 LogicManager -> AddCommand : execute(m)
 activate AddCommand
 
-AddCommand -> Model : addPerson(name, tags)
+AddCommand -> entryList
+activate entryList
+create Entry
+entryList -> Entry
+activate Entry
+Entry --> entryList
+deactivate
+entryList --> AddCommand : e
+deactivate
+
+AddCommand -> Person : addEntry(e)
+activate Person
+Person --> AddCommand
+deactivate
+
+AddCommand -> Model : addPerson(p, tags)
 activate Model
 
 Model --> AddCommand
